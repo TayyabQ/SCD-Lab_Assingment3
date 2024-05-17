@@ -1,0 +1,5 @@
+1 First we had to make docker files for frontend and backend of all episodes.
+2 Then we had to push them on dockerhub.
+3 Then we had to build docker-compose file for all episodes.
+4 Then we had to make deployment.yaml files for all episodes.   (We had to make more than one and different number of replicas)
+5 Then we had to monitor services, pods and deployments of all episodes.
