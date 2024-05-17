@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend3-deployment
+  namespace: backend3-namespace   
+spec:
+  replicas: 3 
+  selector:
+    matchLabels:
+      app: backend3
+  template:
+    metadata:
+      labels:
+        app: backend3
+    spec:
+      containers:
+      - name: backend3
+        image: tayyabqaisar/backend3:latest  
+        ports:
+        - containerPort: 8000

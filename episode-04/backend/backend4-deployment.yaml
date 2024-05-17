@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend4-deployment
+  namespace: backend4-namespace
+spec:
+  replicas: 4   
+  selector:
+    matchLabels:
+      app: backend4
+  template:
+    metadata:
+      labels:
+        app: backend4
+    spec:
+      containers:
+      - name: backend4
+        image: tayyabqaisar/backend4:latest  
+        ports:
+        - containerPort: 8000

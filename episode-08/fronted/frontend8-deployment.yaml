@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend8-deployment
+  namespace: frontend8-namespace
+spec:
+  replicas: 8
+  selector:
+    matchLabels:
+      app: frontend8
+  template:
+    metadata:
+      labels:
+        app: frontend8
+    spec:
+      containers:
+      - name: frontend8
+        image: tayyabqaisar/frontend8:latest
+        ports:
+        - containerPort: 3000

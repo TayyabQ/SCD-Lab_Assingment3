@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend5-deployment
+  namespace: backend5-namespace  
+spec:
+  replicas: 5   
+  selector:
+    matchLabels:
+      app: backend5
+  template:
+    metadata:
+      labels:
+        app: backend5
+    spec:
+      containers:
+      - name: backend5
+        image: tayyabqaisar/backend5:latest  
+        ports:
+        - containerPort: 8000

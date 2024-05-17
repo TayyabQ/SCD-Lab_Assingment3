@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend8-deployment
+  namespace: backend8-namespace
+spec:
+  replicas: 8   
+  selector:
+    matchLabels:
+      app: backend8
+  template:
+    metadata:
+      labels:
+        app: backend8
+    spec:
+      containers:
+      - name: backend8
+        image: tayyabqaisar/backend8:latest  
+        ports:
+        - containerPort: 8000

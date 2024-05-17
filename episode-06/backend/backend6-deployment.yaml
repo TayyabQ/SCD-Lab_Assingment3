@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend6-deployment
+  namespace: backend6-namespace
+spec:
+  replicas: 6   
+  selector:
+    matchLabels:
+      app: backend6
+  template:
+    metadata:
+      labels:
+        app: backend6
+    spec:
+      containers:
+      - name: backend6
+        image: tayyabqaisar/backend6:latest  
+        ports:
+        - containerPort: 8000

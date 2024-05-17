@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend6-deployment
+  namespace: frontend6-namespace
+spec:
+  replicas: 6
+  selector:
+    matchLabels:
+      app: frontend6
+  template:
+    metadata:
+      labels:
+        app: frontend6
+    spec:
+      containers:
+      - name: frontend6
+        image: tayyabqaisar/frontend6:latest
+        ports:
+        - containerPort: 3000

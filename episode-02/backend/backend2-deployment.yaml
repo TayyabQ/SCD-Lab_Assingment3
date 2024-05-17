@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend2-deployment
+  namespace: backend2-namespace
+spec:
+  replicas: 2   
+  selector:
+    matchLabels:
+      app: backend2
+  template:
+    metadata:
+      labels:
+        app: backend2
+    spec:
+      containers:
+      - name: backend2
+        image: tayyabqaisar/backend2:latest  
+        ports:
+        - containerPort: 8000

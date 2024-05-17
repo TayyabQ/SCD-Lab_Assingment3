@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend7-deployment
+  namespace: frontend7-namespace
+spec:
+  replicas: 7
+  selector:
+    matchLabels:
+      app: frontend7
+  template:
+    metadata:
+      labels:
+        app: frontend7
+    spec:
+      containers:
+      - name: frontend7
+        image: tayyabqaisar/frontend7:latest
+        ports:
+        - containerPort: 3000

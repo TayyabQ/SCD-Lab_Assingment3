@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend5-deployment
+  namespace: frontend5-namespace
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: frontend5
+  template:
+    metadata:
+      labels:
+        app: frontend5
+    spec:
+      containers:
+      - name: frontend5
+        image: tayyabqaisar/frontend5:latest
+        ports:
+        - containerPort: 3000

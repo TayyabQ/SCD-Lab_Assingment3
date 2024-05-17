@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend3-deployment
+  namespace: frontend3-namespace
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: frontend3
+  template:
+    metadata:
+      labels:
+        app: frontend3
+    spec:
+      containers:
+      - name: frontend3
+        image: tayyabqaisar/frontend3:latest
+        ports:
+        - containerPort: 3000

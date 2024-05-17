@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend10-deployment
+  namespace: frontend10-namespace
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: frontend10
+  template:
+    metadata:
+      labels:
+        app: frontend10
+    spec:
+      containers:
+      - name: frontend10
+        image: tayyabqaisar/frontend10:latest
+        ports:
+        - containerPort: 3000

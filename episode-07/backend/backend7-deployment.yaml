@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend7-deployment
+  namespace: backend7-namespace
+spec:
+  replicas: 7   
+  selector:
+    matchLabels:
+      app: backend7
+  template:
+    metadata:
+      labels:
+        app: backend7
+    spec:
+      containers:
+      - name: backend7
+        image: tayyabqaisar/backend7:latest  
+        ports:
+        - containerPort: 8000

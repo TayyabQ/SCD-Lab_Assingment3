@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend9-deployment
+  namespace: frontend9-namespace
+spec:
+  replicas: 9
+  selector:
+    matchLabels:
+      app: frontend9
+  template:
+    metadata:
+      labels:
+        app: frontend9
+    spec:
+      containers:
+      - name: frontend9
+        image: tayyabqaisar/frontend9:latest
+        ports:
+        - containerPort: 3000
